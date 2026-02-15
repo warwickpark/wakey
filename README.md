@@ -10,11 +10,22 @@ Wake-on-LAN (WoL) is an Ethernet or Token Ring computer networking standard that
 
 The computer is woken up by sending a "magic packet" that contains the MAC address of the target computer. The magic packet is sent on the broadcast address of the network, and the target computer will turn on if the MAC address matches.
 
+## Supported Platforms
+
+| OS | Architecture | Binary |
+| --- | --- | --- |
+| Linux | amd64 | `wakey_linux_amd64` |
+| Linux | arm64 | `wakey_linux_arm64` |
+| macOS | amd64 (Intel) | `wakey_darwin_amd64` |
+| macOS | arm64 (Apple Silicon) | `wakey_darwin_arm64` |
+| Windows | amd64 | `wakey_windows_amd64.exe` |
+| Windows | arm64 | `wakey_windows_arm64.exe` |
+
 ## Installation
 
 ### MacOS Installation
 
-For MacOS users, you can install `wakey` using Homebrew:
+For MacOS users (Intel and Apple Silicon), you can install `wakey` using Homebrew:
 
 ```bash
 # Tap the repository
@@ -24,7 +35,9 @@ brew tap jonathanruiz/wakey
 brew install wakey
 ```
 
-For manual installation, you can install `wakey` using the `install.sh` script:
+### Manual Installation (macOS / Linux)
+
+For manual installation, you can install `wakey` using the `install.sh` script. The script automatically detects your OS and architecture (amd64/arm64):
 
 ```bash
 # Clone the repository
